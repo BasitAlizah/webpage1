@@ -6,6 +6,11 @@
     <title>Buttons </title>
   </head>
     <body>
+
+ <div class= "container">
+    <div id="displayName"></div>
+ </div>
+      
   <div class= "container">
     <h1>Start machine?</h1>
     
@@ -19,9 +24,7 @@
     </button>
   <div id="bb2"></div>
 
-    <div class= "container">
-    <div id="displayName"></div>
-  </div>
+    
 
   
 <script>
@@ -35,10 +38,9 @@
   
     var personName = localStorage.getItem('personName);
         if (personName){
-      document.getElementById('dosplayName').InnerText=" Thankyou "+ personName +"!";
+      document.getElementById('displayName').InnerText=" Thankyou "+ personName +"!";
     }   else{
-            document.getElementById('dosplayName').InnerText=" Thankyou Stranger!";
-
+            document.getElementById('displayName').InnerText=" Thankyou Stranger!";
     }
   </script>
     </body>
