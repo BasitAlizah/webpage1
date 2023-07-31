@@ -11,6 +11,15 @@
  <div class= "container">
     <div id="displayName"></div>
  </div>
+
+      <script>
+        var personName = localStorage.getItem('personName');
+        if (personName){
+      document.getElementById('displayName').InnerText=" Thankyou "+ personName +"!";
+    }   else{
+            document.getElementById('displayName').InnerText=" Thankyou Stranger!";
+    }
+      </script>
       
   <div class= "container">
     <h1>Start machine?</h1>
@@ -24,6 +33,9 @@
       No
     </button>
   <div id="bb2"></div>
+
+    </body>
+</html>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -40,12 +52,6 @@
       document.getElementById('bb2').textContent = "machine stopped!"
     });
   
-    var personName = localStorage.getItem('personName');
-        if (personName){
-      document.getElementById('displayName').InnerText=" Thankyou "+ personName +"!";
-    }   else{
-            document.getElementById('displayName').InnerText=" Thankyou Stranger!";
-    }
+    
   </script>
-    </body>
-</html>
+    
