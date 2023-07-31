@@ -18,7 +18,8 @@
       No
     </button>
   <div id="bb2"></div>
-    
+    <div id="displayName"></div>
+  </div>
     </body>
     
 </html>
@@ -31,5 +32,12 @@
     document.getElementById('b2').addEventListener('click',function(){
       document.getElementById('bb2').textContent = "machine stopped!"
     });
-    
+  
+    var personName = localStorage.getItem('personName);
+        if (personName){
+      document.getElementById('dosplayName').InnerText=" Thankyou "+ personName +"!";
+    }   else{
+            document.getElementById('dosplayName').InnerText=" Thankyou Stranger!";
+
+    }
   </script>
