@@ -15,16 +15,15 @@
 <script>
     const ws = new WebSocket('ws://server.js:8080');
 
-    function saveName() {
-        var personName = document.getElementById('name').value;
-        ws.send(personName);
-        window.location.href = "Button.html";
-    }
+     function saveName() {
+          const personName = document.getElementById('inputName').value;
+          ws.send(personName);
+        }
 
-    ws.onmessage = (event) => {
-        const personName = event.data;
-        localStorage.setItem('personName', personName);
-    };
+     ws.onmessage = (event) => {
+          const personName = event.data;
+          document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+        };
 </script>
 
     <div class="container">
