@@ -14,46 +14,46 @@
 
 <script>
 
-const ws = new WebSocket('ws://your_server_ip_or_domain:8080');
+// const ws = new WebSocket('ws://your_server_ip_or_domain:8080');
 
-function saveName() {
-  const personName = document.getElementById('name').value;
-  ws.send(personName);
-}
+// function saveName() {
+//   const personName = document.getElementById('name').value;
+//   ws.send(personName);
+// }
 
-ws.onmessage = (event) => {
-  const personName = event.data;
-  document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-};
+// ws.onmessage = (event) => {
+//   const personName = event.data;
+//   document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+// };
 
 
-// const WebSocket = require('ws');
-// const wss = new WebSocket.Server({ port: 8080 });
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
 
-// wss.on('connection', (ws) => {
-//     console.log('A new client connected');
+wss.on('connection', (ws) => {
+    console.log('A new client connected');
 
-//     ws.on('message', (message) => {
-//         // Broadcast the received message to all connected clients
-//         wss.clients.forEach((client) => {
-//             if (client.readyState === WebSocket.OPEN) {
-//                 client.send(message);
-//             }
-//         });
-//     });
-// });
+    ws.on('message', (message) => {
+        // Broadcast the received message to all connected clients
+        wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+});
 
-//     const ws = new WebSocket('ws://0.0.0.0:8080');
+    const ws = new WebSocket('ws://0.0.0.0:8080');
 
-//      function saveName() {
-//           const personName = document.getElementById('name').value;
-//           ws.send(personName);
-//         }
+     function saveName() {
+          const personName = document.getElementById('name').value;
+          ws.send(personName);
+        }
 
-//      ws.onmessage = (event) => {
-//           const personName = event.data;
-//           document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-//         };
+     ws.onmessage = (event) => {
+          const personName = event.data;
+          document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+        };
 
     
     
