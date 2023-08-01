@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+    <body>
+
+ <div class= "container">
+   <div class="alert alert-primary" id="displayName"></div>
+ </div>
+
+      <script>
+    //     var personName = localStorage.getItem('personName');
+    //     if (personName){
+    //   document.getElementById('displayName').innerText=" Hello "+ personName +"!";
+    // }   else{
+    //         document.getElementById('displayName').innerText=" Hello Stranger!";
+    // }
+
+ const ws = new WebSocket('ws://0.0.0.0:8080');
+
+        ws.onmessage = (event) => {
+            var personName = event.data;
+          if(personName){
+            document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+          }else{
+            document.getElementById('displayName').innerText=" Hello Stranger!";
+          }
+          };
+
+        
+      </script>
+      
+  <div class= "container">
+    <h1>Start machine?</h1>
+    
+    <button type="button" class ="btn btn-primary mr-1" id="b1">
+      Yes
+    </button>
+    <div id= "bb1"></div>
+    
+      <button type="button" class ="btn btn-primary mr-1" id="b2">
+      No
+    </button>
+  <div id="bb2"></div>
+
+    </body>
+</html>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+  
+<script>
+    document.getElementById('b1').addEventListener('click',function(){
+      document.getElementById('bb1').textContent = "machine started!"
+    });
+    
+    document.getElementById('b2').addEventListener('click',function(){
+      document.getElementById('bb2').textContent = "machine stopped!"
+    });
+  
+    
+  </script>
+    
