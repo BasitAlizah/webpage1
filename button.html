@@ -13,12 +13,21 @@
  </div>
 
       <script>
-        var personName = localStorage.getItem('personName');
-        if (personName){
-      document.getElementById('displayName').innerText=" Hello "+ personName +"!";
-    }   else{
-            document.getElementById('displayName').innerText=" Hello Stranger!";
-    }
+    //     var personName = localStorage.getItem('personName');
+    //     if (personName){
+    //   document.getElementById('displayName').innerText=" Hello "+ personName +"!";
+    // }   else{
+    //         document.getElementById('displayName').innerText=" Hello Stranger!";
+    // }
+
+ const ws = new WebSocket('ws://your_server_ip_or_domain:8080');
+
+        ws.onmessage = (event) => {
+            const personName = event.data;
+            document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+        };
+
+        
       </script>
       
   <div class= "container">
