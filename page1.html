@@ -50,10 +50,10 @@ wss.on('connection', (ws) => {
           ws.send(personName);
         }
 
-     ws.onmessage = (event) => {
-          const personName = event.data;
-          document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-        };
+     // ws.onmessage = (event) => {
+     //      const personName = event.data;
+     //      document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+     //    };
 
     
     
