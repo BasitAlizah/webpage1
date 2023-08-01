@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <input type="text" id="name" placeholder="Enter your name">
+    <button class="btn btn-primary mr-2" onclick="saveName()">Save Name</button>
+</div>
+
+<script>
+    const ws = new WebSocket('ws://server.js'); // Change 'your-server-address' to your server address
+
+    function saveName() {
+        var personName = document.getElementById('name').value;
+        ws.send(personName);
+        window.location.href = "Button.html";
+    }
+
+    ws.onmessage = (event) => {
+        const personName = event.data;
+        localStorage.setItem('personName', personName);
+    };
+</script>
+
+    <div class="container">
+            <h1>Lorem ipsum</h1>
+        <div class="row">
+            <div class="col">
+                <div class=" scroll-container"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet urna ut dolor vestibulum mollis. Nullam hendrerit purus turpis, id rutrum justo rutrum eget. Sed lorem mauris, malesuada pretium dignissim in, venenatis quis est. Sed vel lectus maximus, elementum metus vitae, pharetra dui. Donec in ligula magna. Morbi bibendum ut leo ac fermentum. Aliquam erat volutpat. Morbi condimentum diam ut lobortis dapibus. Etiam eu mauris tempor, aliquet turpis quis, mollis velit.</p>
+
+                <p>Quisque sit amet porta mi. Integer volutpat faucibus consequat. Donec sit amet enim est. Quisque pulvinar magna sit amet dignissim finibus. Cras diam augue, lobortis a venenatis vitae, dignissim ut lectus. Donec augue mauris, varius a tellus ac, condimentum condimentum tellus. Integer luctus mi massa, eu tincidunt leo pulvinar eu. Morbi porttitor, massa vel dapibus interdum, justo urna ornare nulla, at blandit enim nulla vel nulla. Aenean non ante ut est iaculis tincidunt. Nulla a laoreet augue. Sed posuere risus vel condimentum cursus.</p>
+
+                <p>Mauris fermentum ut mauris id congue. Aenean libero est, dictum in eleifend ut, finibus at sem. Quisque pulvinar, nisl ac faucibus pulvinar, diam turpis gravida ante, ultrices egestas lorem ligula quis eros. Nulla et lacus et sapien vehicula hendrerit vitae ut nisi. Quisque eu nulla augue. Nam est magna, placerat ac eleifend quis, ultrices id arcu. Cras lobortis aliquet neque, in volutpat risus feugiat quis. Vestibulum et velit ac sem dictum pharetra quis quis libero. Aliquam enim ex, mollis at luctus ut, tristique sed libero. Integer eget justo metus.</p>
+
+                <p>Suspendisse potenti. Cras vel congue turpis. Pellentesque urna dui, pharetra eu eleifend id, placerat ac purus. Duis consequat leo leo, ut ultrices massa luctus convallis. Suspendisse sit amet ligula aliquam, pellentesque metus eget, commodo erat. Fusce non efficitur ligula. Fusce faucibus nunc sed laoreet tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce molestie sem tellus, quis fermentum metus molestie vitae. Vestibulum dictum varius mattis.</p>
+
+                <p>Sed vitae leo eu lectus dapibus laoreet. Quisque accumsan luctus risus at placerat. Maecenas nulla orci, viverra at mollis at, sollicitudin at nisi. Curabitur felis augue, bibendum eget pretium sit amet, efficitur id diam. Ut sodales arcu sit amet risus tincidunt volutpat. Morbi sagittis molestie bibendum. Donec suscipit sem accumsan facilisis aliquam. Vivamus at dapibus sem, vitae dictum diam. Suspendisse potenti. Curabitur ante nisi, suscipit id orci sed, interdum volutpat ligula. Vivamus tellus mauris, vehicula id nunc mollis, luctus placerat ante. Nam viverra mauris arcu, sed egestas mi fermentum vel</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet urna ut dolor vestibulum mollis. Nullam hendrerit purus turpis, id rutrum justo rutrum eget. Sed lorem mauris, malesuada pretium dignissim in, venenatis quis est. Sed vel lectus maximus, elementum metus vitae, pharetra dui. Donec in ligula magna. Morbi bibendum ut leo ac fermentum. Aliquam erat volutpat. Morbi condimentum diam ut lobortis dapibus. Etiam eu mauris tempor, aliquet turpis quis, mollis velit.</p>
+
+                <p>Quisque sit amet porta mi. Integer volutpat faucibus consequat. Donec sit amet enim est. Quisque pulvinar magna sit amet dignissim finibus. Cras diam augue, lobortis a venenatis vitae, dignissim ut lectus. Donec augue mauris, varius a tellus ac, condimentum condimentum tellus. Integer luctus mi massa, eu tincidunt leo pulvinar eu. Morbi porttitor, massa vel dapibus interdum, justo urna ornare nulla, at blandit enim nulla vel nulla. Aenean non ante ut est iaculis tincidunt. Nulla a laoreet augue. Sed posuere risus vel condimentum cursus.</p>
+
+                <p>Mauris fermentum ut mauris id congue. Aenean libero est, dictum in eleifend ut, finibus at sem. Quisque pulvinar, nisl ac faucibus pulvinar, diam turpis gravida ante, ultrices egestas lorem ligula quis eros. Nulla et lacus et sapien vehicula hendrerit vitae ut nisi. Quisque eu nulla augue. Nam est magna, placerat ac eleifend quis, ultrices id arcu. Cras lobortis aliquet neque, in volutpat risus feugiat quis. Vestibulum et velit ac sem dictum pharetra quis quis libero. Aliquam enim ex, mollis at luctus ut, tristique sed libero. Integer eget justo metus.</p>
+
+                <p>Suspendisse potenti. Cras vel congue turpis. Pellentesque urna dui, pharetra eu eleifend id, placerat ac purus. Duis consequat leo leo, ut ultrices massa luctus convallis. Suspendisse sit amet ligula aliquam, pellentesque metus eget, commodo erat. Fusce non efficitur ligula. Fusce faucibus nunc sed laoreet tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce molestie sem tellus, quis fermentum metus molestie vitae. Vestibulum dictum varius mattis.</p>
+
+                <p>Sed vitae leo eu lectus dapibus laoreet. Quisque accumsan luctus risus at placerat. Maecenas nulla orci, viverra at mollis at, sollicitudin at nisi. Curabitur felis augue, bibendum eget pretium sit amet, efficitur id diam. Ut sodales arcu sit amet risus tincidunt volutpat. Morbi sagittis molestie bibendum. Donec suscipit sem accumsan facilisis aliquam. Vivamus at dapibus sem, vitae dictum diam. Suspendisse potenti. Curabitur ante nisi, suscipit id orci sed, interdum volutpat ligula. Vivamus tellus mauris, vehicula id nunc mollis, luctus placerat ante. Nam viverra mauris arcu, sed egestas mi fermentum vel</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet urna ut dolor vestibulum mollis. Nullam hendrerit purus turpis, id rutrum justo rutrum eget. Sed lorem mauris, malesuada pretium dignissim in, venenatis quis est. Sed vel lectus maximus, elementum metus vitae, pharetra dui. Donec in ligula magna. Morbi bibendum ut leo ac fermentum. Aliquam erat volutpat. Morbi condimentum diam ut lobortis dapibus. Etiam eu mauris tempor, aliquet turpis quis, mollis velit.</p>
+
+                <p>Quisque sit amet porta mi. Integer volutpat faucibus consequat. Donec sit amet enim est. Quisque pulvinar magna sit amet dignissim finibus. Cras diam augue, lobortis a venenatis vitae, dignissim ut lectus. Donec augue mauris, varius a tellus ac, condimentum condimentum tellus. Integer luctus mi massa, eu tincidunt leo pulvinar eu. Morbi porttitor, massa vel dapibus interdum, justo urna ornare nulla, at blandit enim nulla vel nulla. Aenean non ante ut est iaculis tincidunt. Nulla a laoreet augue. Sed posuere risus vel condimentum cursus.</p>
+
+                <p>Mauris fermentum ut mauris id congue. Aenean libero est, dictum in eleifend ut, finibus at sem. Quisque pulvinar, nisl ac faucibus pulvinar, diam turpis gravida ante, ultrices egestas lorem ligula quis eros. Nulla et lacus et sapien vehicula hendrerit vitae ut nisi. Quisque eu nulla augue. Nam est magna, placerat ac eleifend quis, ultrices id arcu. Cras lobortis aliquet neque, in volutpat risus feugiat quis. Vestibulum et velit ac sem dictum pharetra quis quis libero. Aliquam enim ex, mollis at luctus ut, tristique sed libero. Integer eget justo metus.</p>
+
+                <p>Suspendisse potenti. Cras vel congue turpis. Pellentesque urna dui, pharetra eu eleifend id, placerat ac purus. Duis consequat leo leo, ut ultrices massa luctus convallis. Suspendisse sit amet ligula aliquam, pellentesque metus eget, commodo erat. Fusce non efficitur ligula. Fusce faucibus nunc sed laoreet tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce molestie sem tellus, quis fermentum metus molestie vitae. Vestibulum dictum varius mattis.</p>
+
+                <p>Sed vitae leo eu lectus dapibus laoreet. Quisque accumsan luctus risus at placerat. Maecenas nulla orci, viverra at mollis at, sollicitudin at nisi. Curabitur felis augue, bibendum eget pretium sit amet, efficitur id diam. Ut sodales arcu sit amet risus tincidunt volutpat. Morbi sagittis molestie bibendum. Donec suscipit sem accumsan facilisis aliquam. Vivamus at dapibus sem, vitae dictum diam. Suspendisse potenti. Curabitur ante nisi, suscipit id orci sed, interdum volutpat ligula. Vivamus tellus mauris, vehicula id nunc mollis, luctus placerat ante. Nam viverra mauris arcu, sed egestas mi fermentum vel</p>
+            
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet urna ut dolor vestibulum mollis. Nullam hendrerit purus turpis, id rutrum justo rutrum eget. Sed lorem mauris, malesuada pretium dignissim in, venenatis quis est. Sed vel lectus maximus, elementum metus vitae, pharetra dui. Donec in ligula magna. Morbi bibendum ut leo ac fermentum. Aliquam erat volutpat. Morbi condimentum diam ut lobortis dapibus. Etiam eu mauris tempor, aliquet turpis quis, mollis velit.</p>
+
+                <p>Quisque sit amet porta mi. Integer volutpat faucibus consequat. Donec sit amet enim est. Quisque pulvinar magna sit amet dignissim finibus. Cras diam augue, lobortis a venenatis vitae, dignissim ut lectus. Donec augue mauris, varius a tellus ac, condimentum condimentum tellus. Integer luctus mi massa, eu tincidunt leo pulvinar eu. Morbi porttitor, massa vel dapibus interdum, justo urna ornare nulla, at blandit enim nulla vel nulla. Aenean non ante ut est iaculis tincidunt. Nulla a laoreet augue. Sed posuere risus vel condimentum cursus.</p>
+
+                <p>Mauris fermentum ut mauris id congue. Aenean libero est, dictum in eleifend ut, finibus at sem. Quisque pulvinar, nisl ac faucibus pulvinar, diam turpis gravida ante, ultrices egestas lorem ligula quis eros. Nulla et lacus et sapien vehicula hendrerit vitae ut nisi. Quisque eu nulla augue. Nam est magna, placerat ac eleifend quis, ultrices id arcu. Cras lobortis aliquet neque, in volutpat risus feugiat quis. Vestibulum et velit ac sem dictum pharetra quis quis libero. Aliquam enim ex, mollis at luctus ut, tristique sed libero. Integer eget justo metus.</p>
+
+                <p>Suspendisse potenti. Cras vel congue turpis. Pellentesque urna dui, pharetra eu eleifend id, placerat ac purus. Duis consequat leo leo, ut ultrices massa luctus convallis. Suspendisse sit amet ligula aliquam, pellentesque metus eget, commodo erat. Fusce non efficitur ligula. Fusce faucibus nunc sed laoreet tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce molestie sem tellus, quis fermentum metus molestie vitae. Vestibulum dictum varius mattis.</p>
+
+                <p>Sed vitae leo eu lectus dapibus laoreet. Quisque accumsan luctus risus at placerat. Maecenas nulla orci, viverra at mollis at, sollicitudin at nisi. Curabitur felis augue, bibendum eget pretium sit amet, efficitur id diam. Ut sodales arcu sit amet risus tincidunt volutpat. Morbi sagittis molestie bibendum. Donec suscipit sem accumsan facilisis aliquam. Vivamus at dapibus sem, vitae dictum diam. Suspendisse potenti. Curabitur ante nisi, suscipit id orci sed, interdum volutpat ligula. Vivamus tellus mauris, vehicula id nunc mollis, luctus placerat ante. Nam viverra mauris arcu, sed egestas mi fermentum vel</p>
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href='button.html'>
+        <button class="btn btn-primary mr-1"> Linked Page</button>
+        </a>
+    </div>
+
+
+    <div class="container mt-5">
+        <h5>Volume</h5>
+        <div class="alert alert-primary" id="outputVol">
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <!-- VolumeButtons -->
+            <button class="btn btn-primary mr-2" onclick="decreaseVolume()">-</button>
+            <button class="btn btn-primary mr-2" onclick="increaseVolume()">+</button>
+            <!-- VolumeRangeSlider -->
+            <input type="range" class="form-control-range" id="volumeSlider" min="0" max="100" step="1" onchange="setVolume(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <h5>Brightness</h5>
+        <div class="alert alert-primary" id="outputBri">
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <!-- BrightnessButtons -->
+            <button class="btn btn-primary mr-2" onclick="decreaseBrightness()">-</button>
+            <button class="btn btn-primary mr-2" onclick="increaseBrightness()">+</button>
+            <!-- BrigntnessRangeSlider -->
+            <input type="range" class="form-control-range" id="brightnessSlider" min="0" max="100" step="1" onchange="setBrightness(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <div class ="container"><p>how do I add space here?
+    </p></div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+      <script>
+        function printVolume(){
+            var outputVol = document.getElementById('outputVol');
+            var volumeSlider = document.getElementById('volumeSlider');
+            outputVol.textContent = "Volume: " + volumeSlider.value;
+        }
+        function setVolume(value){
+            console.log('Volume set to: '+value);
+            printVolume();
+        }
+        function decreaseVolume(){
+            var volumeSlider =document.getElementById('volumeSlider');
+            if(volumeSlider.value>0){
+                volumeSlider.value= parseInt(volumeSlider.value)-1;
+                setVolume(volumeSlider.value);
+            }
+        }
+        function increaseVolume(){
+            var volumeSlider =document.getElementById('volumeSlider');
+            if(volumeSlider.value<100){
+                volumeSlider.value= parseInt(volumeSlider.value)+1;
+                setVolume(volumeSlider.value);
+            }
+        }
+
+
+
+        function printBrightness(){
+            var outputBri = document.getElementById('outputBri');
+            var brightnessSlider = document.getElementById('brightnessSlider');
+            outputBri.textContent = "Brightness: " + brightnessSlider.value;
+            }
+        function setBrightness(value){
+            console.log('Brightness set to: '+value);
+            printBrightness();
+        }
+        function decreaseBrightness(){
+            var BrightnessSlider =document.getElementById('brightnessSlider');
+            if(BrightnessSlider.value>0){
+                BrightnessSlider.value= parseInt(BrightnessSlider.value)-1;
+                setBrightness(BrightnessSlider.value);
+            }
+        }
+        function increaseBrightness(){
+            var BrightnessSlider =document.getElementById('brightnessSlider');
+            if(BrightnessSlider.value<100){
+                BrightnessSlider.value= parseInt(BrightnessSlider.value)+1;
+                setBrightness(BrightnessSlider.value);
+            }
+        }
+printVolume();
+printBrightness();
+
+        function saveName(){
+            var personName= document.getElementById('name').value;
+            localStorage.setItem('personName',personName);
+            window.location.heref="Button.html";
+        }
+          
+    </script>  
+
+    
+</body>
+</html>
