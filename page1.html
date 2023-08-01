@@ -16,7 +16,7 @@
     const ws = new WebSocket('ws://server.js:8080');
 
      function saveName() {
-          const personName = document.getElementById('inputName').value;
+          const personName = document.getElementById('name').value;
           ws.send(personName);
         }
 
@@ -175,7 +175,7 @@ printBrightness();
         function saveName(){
             var personName= document.getElementById('name').value;
             localStorage.setItem('personName',personName);
-            window.location.heref="Button.html";
+            window.location.href="Button.html";
         }
           
     </script>  
