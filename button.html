@@ -23,7 +23,7 @@
  const ws = new WebSocket('ws://0.0.0.0:8080');
 
         ws.onmessage = (event) => {
-            const personName = event.data;
+            var personName = event.data;
             document.getElementById('displayName').innerText = "Hello, " + personName + "!";
         };
 
