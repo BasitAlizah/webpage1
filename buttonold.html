@@ -13,23 +13,23 @@
  </div>
 
       <script>
-    //     var personName = localStorage.getItem('personName');
-    //     if (personName){
-    //   document.getElementById('displayName').innerText=" Hello "+ personName +"!";
-    // }   else{
-    //         document.getElementById('displayName').innerText=" Hello Stranger!";
-    // }
-
- const ws = new WebSocket('ws://0.0.0.0:8080');
-
-        ws.onmessage = (event) => {
-            var personName = event.data;
-          if(personName){
-            document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-          }else{
+        var personName = localStorage.getItem('personName');
+        if (personName){
+      document.getElementById('displayName').innerText=" Hello "+ personName +"!";
+    }   else{
             document.getElementById('displayName').innerText=" Hello Stranger!";
-          }
-          };
+    }
+
+ // const ws = new WebSocket('ws://0.0.0.0:8080');
+
+ //        ws.onmessage = (event) => {
+ //            var personName = event.data;
+ //          if(personName){
+ //            document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+ //          }else{
+ //            document.getElementById('displayName').innerText=" Hello Stranger!";
+ //          }
+ //          };
 
         
       </script>
