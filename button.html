@@ -20,7 +20,7 @@
     //         document.getElementById('displayName').innerText=" Hello Stranger!";
     // }
 
- const ws = new WebSocket('ws://0.0.0.0:8082');
+ const ws = new WebSocket('ws://127.0.0.1:8082');
 
         ws.onmessage = (event) => {
             var personName = event.data;
