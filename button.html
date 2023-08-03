@@ -24,6 +24,7 @@
 // document.getElementById('displayName').innerText=" Hello, Stranger!";
         ws.onmessage = (event) => {
             const personName = event.data;
+          document.getElementById('displayName').innerText=" Hello, Stranger!";
           document.getElementById('displayName').innerText = "Hello, " + personName + "!";
           // if(personName){
           //   document.getElementById('displayName').innerText = "Hello, " + personName + "!";
