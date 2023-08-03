@@ -21,7 +21,8 @@
     // }
 
  const ws = new WebSocket('ws://185.199.110.153:8082');
-// document.getElementById('displayName').innerText=" Hello, Stranger!";
+
+        document.getElementById('displayName').innerText=" Hello, Stranger!";
         ws.onmessage = (event) => {
             const personName = event.data;
           document.getElementById('displayName').innerText=" Hello, Stranger!";
