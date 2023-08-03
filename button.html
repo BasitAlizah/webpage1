@@ -23,11 +23,11 @@
  const ws = new WebSocket('ws://127.0.0.1:8082');
 
         ws.onmessage = (event) => {
-            var personName = event.data;
+            const personName = event.data;
           if(personName){
             document.getElementById('displayName').innerText = "Hello, " + personName + "!";
           }else{
-            document.getElementById('displayName').innerText=" Hello Stranger!";
+            document.getElementById('displayName').innerText=" Hello, Stranger!";
           }
           };
 
