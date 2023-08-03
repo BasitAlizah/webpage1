@@ -20,19 +20,19 @@
     //         document.getElementById('displayName').innerText=" Hello Stranger!";
     // }
 
- const ws = new WebSocket('ws://185.199.110.153:8082');
+ const ws = new WebSocket('ws://103.205.177.163/:8082');
 
         document.getElementById('displayName').innerText=" Hello, Stranger!";
         ws.onmessage = (event) => {
             const personName = event.data;
-          document.getElementById('displayName').innerText=" Hello, Stranger!";
-          document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-          // if(personName){
-          //   document.getElementById('displayName').innerText = "Hello, " + personName + "!";
-          // }else{
-          //   document.getElementById('displayName').innerText=" Hello, Stranger!";
-          // }
-          // };
+          // document.getElementById('displayName').innerText=" Hello, Stranger!";
+          // document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+          if(personName){
+            document.getElementById('displayName').innerText = "Hello, " + personName + "!";
+          }else{
+            document.getElementById('displayName').innerText=" Hello, Stranger!";
+          }
+          };
 
         
       </script>
